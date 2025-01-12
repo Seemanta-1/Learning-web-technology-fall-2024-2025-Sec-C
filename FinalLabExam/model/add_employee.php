@@ -1,5 +1,5 @@
 <?php
-require ("../controller/db_connection.php");
+require '../controller/db_connection.php';
 
 // Retrieve and sanitize POST data
 $name = isset($_POST['name']) ? $conn->real_escape_string($_POST['name']) : '';
