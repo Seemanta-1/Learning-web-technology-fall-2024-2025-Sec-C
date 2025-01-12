@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../view/login.css">
+    <script>
+        function validateLoginForm(event) {
+            event.preventDefault(); // Prevent form submission until validation passes
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            // Check for empty username
+            if (!username) {
+                alert("Username is required.");
+                return false;
+            }
+
+            // Check for empty password
+            if (!password) {
+                alert("Password is required.");
+                return false;
+            }
+
+            // Submit the form if validation passes
+            document.getElementById("loginForm").submit();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm" action="../model/login.php" method="POST" onsubmit="validateLoginForm(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <div class="additional-options">
+            <p>Don't have an account? <a href="../view/signup.html">Sign up here</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Signup Form</title>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission if validation fails
+
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const role = document.getElementById("role").value.trim();
+
+            // Check for empty fields
+            if (!username || !email || !phone || !password || !role) {
+                alert("All fields are required. Please fill out every field.");
+                return false;
+            }
+
+            // Submit the form if validation passes
+            document.getElementById("signupForm").submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Signup Form</h1>
+    <form id="signupForm" method="POST" action="../model/signup.php" onsubmit="validateForm(event)">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="role">Role:</label><br>
+        <input type="text" id="role" name="role"><br><br>
+
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="../view/login.html">Login here</a>.</p>
+
+    </form>
+</body>
+</html>
