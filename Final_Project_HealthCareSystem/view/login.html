@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../view/login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="../model/login.php" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <div class="additional-options">
+            <p><a href="../view/forgot_password.html">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="../view/signup.html">Sign up here</a>.</p>
+            <p><a href="../view/dashboard.html">Back to Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

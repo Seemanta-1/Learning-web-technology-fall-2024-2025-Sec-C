@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../view/dashboard.css">
+</head>
+<body>
+    <div class="side-menu" id="side-menu">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="../view/login.html">Dashboard</a></li>
+            <li><a href="../view/login.html">My Profile</a></li>
+            <li><a href="../view/login.html">Appointments</a></li>
+            <li><a href="../model/view_contact.php">Emergency Contacts</a></li>
+            <li><a href="../view/Sow_notification.php">Notification</a></li>
+            <li><a href="../view/show_hp.php">Hospital Profile</a></li>
+            <li><a href="../view/show_hb.php">Hospital Background</a></li>
+            
+        </ul>
+    </div>
+
+    <div class="content-container" id="content-container">
+        <header class="header">
+            <div class="menu-icon" id="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+                <h1>HealthCare System</h1>
+            </div>
+            <div class="header-buttons">
+                <a href="../view/login.html">Login</a>
+                <a href="../view/signup.html">Sign Up</a>
+            </div>
+        </header>
+
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="../view/about.php">About</a></li>
+                <li><a href="../model/view_faq.php">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="content">
+                <h2>Welcome to the HealthCare Dashboard</h2>
+                <p>Track your health, make online payments, and stay informed.</p>
+                
+
+            </section>
+
+            <section class="view">
+                <h2>Gallery</h2>
+                <div class="gallery">
+                    <img src="..\view\1.jpeg" alt="Image 1">
+                    <img src="..\view\2.jpeg" alt="Image 2">
+                    <img src="..\view\3.jpeg" alt="Image 3">
+                    <img src="..\view\4.jpeg" alt="Image 4">
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 HealthCare System. All Rights Reserved. <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const sideMenu = document.getElementById('side-menu');
+        const contentContainer = document.getElementById('content-container');
+        const sideMenuLinks = sideMenu.querySelectorAll('a');
+        const paymentButton = document.getElementById('payment-button');
+        const signupSection = document.getElementById('signup-section');
+
+        menuIcon.addEventListener('click', () => {
+            if (sideMenu.classList.contains('active')) {
+                sideMenu.classList.remove('active');
+                contentContainer.classList.remove('collapsed');
+            } else {
+                sideMenu.classList.add('active');
+                contentContainer.classList.add('collapsed');
+            }
+        });
+
+        sideMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sideMenu.classList.remove('active');
+                contentContainer.classList.remove('collapsed');
+            });
+        });
+
+        paymentButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupSection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
